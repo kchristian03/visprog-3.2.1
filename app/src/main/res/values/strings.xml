@@ -8,4 +8,5 @@
     <string name="label_1">Ayam</string>
     <string name="label_2">Sapi</string>
     <string name="label_3">Kambing</string>
+    <string name="jenis_hewan">Jenis Hewan</string>
 </resources>

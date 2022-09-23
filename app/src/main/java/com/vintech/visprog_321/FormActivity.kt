@@ -9,6 +9,9 @@ import com.vintech.visprog_321.databinding.ActivityFormBinding
 
 class FormActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityFormBinding
+
+    //    private lateinit var data: "a"
+    private var position = -1
     var image: String = ""
 
     private val GetResult =
@@ -32,10 +35,24 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityFormBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
-        listener()
+        GetIntent()
+        Listener()
     }
 
-    private fun listener() {
+    private fun GetIntent() {
+        position = intent.getIntExtra("position", -1)
+//        if (position != -1) {
+//            val film = GlobarVar.listDataFilm[position]
+//            viewBinding.toolbarForm.title = "Edit Animal"
+//            viewBinding.addButton.text = "Save"
+//            viewBinding.imageView.setImageURI(Uri.parse(GlobarVar.listDataFilm[position].imageUri))
+//            viewBinding.titleTextInputLayout.editText?.setText(film.title)
+//            viewBinding.ratingTextInputLayout.editText?.setText(film.rating)
+//            viewBinding.genreTextInputLayout.editText?.setText(film.genre.toString())
+//        }
+    }
+
+    private fun Listener() {
         viewBinding.imageView.setOnClickListener {
             val myIntent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             myIntent.type = "image/*"
@@ -45,8 +62,12 @@ class FormActivity : AppCompatActivity() {
         viewBinding.submitButton.setOnClickListener {
             var nama = viewBinding.namaTIL.editText?.text.toString().trim()
             var usia = viewBinding.usiaTIL.editText?.text.toString().trim()
-            //TODO: Use <include> and <exclude> to control what is backed up.
+            //TODO: Memasukan dan mencari jenis hewan ke variable
 
+        }
+
+        viewBinding.toolbarForm.getChildAt(1).setOnClickListener {
+            finish()
         }
     }
 }
