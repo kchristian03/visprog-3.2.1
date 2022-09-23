@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">visprog-3.2.1</string>
+    <string name="title">Animal List</string>
+    <string name="add">Add</string>
+    <string name="poster_image">poster_image</string>
+    <string name="title_text">Nama Hewan</string>
+    <string name="usia_text">Usia Hewan</string>
+    <string name="label_1">Ayam</string>
+    <string name="label_2">Sapi</string>
+    <string name="label_3">Kambing</string>
+</resources>
