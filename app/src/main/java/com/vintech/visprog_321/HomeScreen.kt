@@ -34,13 +34,14 @@ class HomeScreen : AppCompatActivity(), CardListener {
         val arrayAnimal = resources.getStringArray(R.array.listAnimal)
         // access the spinner
         val spinner = viewBinding.filterSpinner
-        val adapter = ArrayAdapter(
+        val adapterr = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_item, arrayAnimal
         )
-        spinner.adapter = adapter
+        spinner.adapter = adapterr
         spinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onItemSelected(
                 parent: AdapterView<*>,
                 view: View, position: Int, id: Long
@@ -85,11 +86,11 @@ class HomeScreen : AppCompatActivity(), CardListener {
                         viewBinding.listDataRV.adapter = adapterTemp
                         adapter.notifyDataSetChanged()
                     }
-                    "All" -> {
+                    "ALL" -> {
                         GlobalVar.session = "null"
                         viewBinding.listDataRV.adapter = adapter
-                        GlobalVar.listDataHewan.clear()
-                        viewBinding.AddDataTV.alpha = 1f
+//                        GlobalVar.listDataHewan.clear()
+//                        viewBinding.AddDataTV.alpha = 1f
                         adapter.notifyDataSetChanged()
                     }
                 }
