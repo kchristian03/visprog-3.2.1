@@ -13,12 +13,16 @@ open class Animal(
     var imageUri: String = imageUri
     var id: Int = id
 
-    fun makanan(i: Biji): String {
-        return "makan biji"
+    fun makananAyam(i: Biji): String {
+        return "Memberi makan ayam dengan biji"
     }
 
-    fun <Int> makanan(j: Rumput): String {
-        return "makan rumput"
+    fun makananSapi(j: Rumput): String {
+        return "Memberi makan sapi dengan rumput"
+    }
+
+    fun makananKambing(k: Rumput): String {
+        return "Memberi makan kambing dengan rumput"
     }
 
     open fun interaksi(): String {

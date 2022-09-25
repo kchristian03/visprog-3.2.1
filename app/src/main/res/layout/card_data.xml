@@ -123,7 +123,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginStart="18dp"
-                app:cardBackgroundColor="#ff424242"
+                app:cardBackgroundColor="#00000000"
                 app:cardCornerRadius="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

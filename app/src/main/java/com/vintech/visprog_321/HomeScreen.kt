@@ -187,13 +187,19 @@ class HomeScreen : AppCompatActivity(), CardListener {
                     if (GlobalVar.listDataHewan[i] is ayam) {
                         Toast.makeText(
                             this,
-                            GlobalVar.listDataHewan[i].makanan(Biji()),
+                            GlobalVar.listDataHewan[i].makananAyam(Biji()),
+                            Toast.LENGTH_LONG
+                        ).show()
+                    } else if (GlobalVar.listDataHewan[i] is sapi) {
+                        Toast.makeText(
+                            this,
+                            GlobalVar.listDataHewan[i].makananSapi(Rumput()),
                             Toast.LENGTH_LONG
                         ).show()
                     } else {
                         Toast.makeText(
                             this,
-                            GlobalVar.listDataHewan[i].makanan<Int>(Rumput()),
+                            GlobalVar.listDataHewan[i].makananKambing(Rumput()),
                             Toast.LENGTH_LONG
                         ).show()
                     }
