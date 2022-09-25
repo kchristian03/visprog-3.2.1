@@ -29,7 +29,7 @@
                 android:text="Nama"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton_Sound"
                 app:layout_constraintStart_toEndOf="@+id/cardView"
                 app:layout_constraintTop_toTopOf="@+id/cardView" />
 
@@ -94,7 +94,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/imageButton_Sound"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -107,14 +107,14 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/imageButton_Feed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton"
-                app:layout_constraintStart_toStartOf="@+id/imageButton"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton_Sound"
+                app:layout_constraintStart_toStartOf="@+id/imageButton_Sound"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton_Sound"
                 app:srcCompat="@drawable/ic_baseline_fastfood_24"
                 tools:ignore="SpeakableTextPresentCheck" />
 
