@@ -6,6 +6,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +29,78 @@ class HomeScreen : AppCompatActivity(), CardListener {
         setContentView(viewBinding.root)
         listener()
         setDataRV()
+
+        // access the items of the list
+        val arrayAnimal = resources.getStringArray(R.array.listAnimal)
+        // access the spinner
+        val spinner = viewBinding.filterSpinner
+        val adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item, arrayAnimal
+        )
+        spinner.adapter = adapter
+        spinner.onItemSelectedListener = object :
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View, position: Int, id: Long
+            ) {
+                Toast.makeText(
+                    this@HomeScreen,
+                    getString(R.string.jenis_hewan) + " " +
+                            "" + arrayAnimal[position], Toast.LENGTH_SHORT
+                ).show()
+
+                when (arrayAnimal[position]) {
+                    "Ayam" -> {
+                        GlobalVar.session = "ayam"
+                        GlobalVar.tempDataHewan.clear()
+                        for (i in 0 until GlobalVar.listDataHewan.size) {
+                            if (GlobalVar.listDataHewan[i] is ayam) {
+                                GlobalVar.tempDataHewan.add(GlobalVar.listDataHewan[i])
+                            }
+                        }
+                        viewBinding.listDataRV.adapter = adapterTemp
+                        adapter.notifyDataSetChanged()
+                    }
+                    "Sapi" -> {
+                        GlobalVar.session = "sapi"
+                        GlobalVar.tempDataHewan.clear()
+                        for (i in 0 until GlobalVar.listDataHewan.size) {
+                            if (GlobalVar.listDataHewan[i] is sapi) {
+                                GlobalVar.tempDataHewan.add(GlobalVar.listDataHewan[i])
+                            }
+                        }
+                        viewBinding.listDataRV.adapter = adapterTemp
+                        adapter.notifyDataSetChanged()
+                    }
+                    "Kambing" -> {
+                        GlobalVar.session = "kambing"
+                        GlobalVar.tempDataHewan.clear()
+                        for (i in 0 until GlobalVar.listDataHewan.size) {
+                            if (GlobalVar.listDataHewan[i] is kambing) {
+                                GlobalVar.tempDataHewan.add(GlobalVar.listDataHewan[i])
+                            }
+                        }
+                        viewBinding.listDataRV.adapter = adapterTemp
+                        adapter.notifyDataSetChanged()
+                    }
+                    "All" -> {
+                        GlobalVar.session = "null"
+                        viewBinding.listDataRV.adapter = adapter
+                        GlobalVar.listDataHewan.clear()
+                        viewBinding.AddDataTV.alpha = 1f
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // write code to perform some action
+            }
+        }
+
+
     }
 
     @SuppressLint("NotifyDataSetChanged")

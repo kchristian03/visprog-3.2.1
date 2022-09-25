@@ -98,7 +98,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/usia_text"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:textColorHint="#78909C" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -129,6 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="12dp"
+                        android:checked="false"
                         android:text="@string/label_1"
                         android:textColor="#FFFFFF" />
 
@@ -137,6 +138,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="12dp"
+                        android:checked="false"
                         android:text="@string/label_2"
                         android:textColor="#FFFFFF" />
 
@@ -145,6 +147,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="12dp"
+                        android:checked="false"
                         android:text="@string/label_3"
                         android:textColor="#FFFFFF" />
                 </RadioGroup>

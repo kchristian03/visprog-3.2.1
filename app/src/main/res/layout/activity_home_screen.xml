@@ -8,6 +8,17 @@
     android:backgroundTint="#000000"
     tools:context=".HomeScreen">
 
+    <Spinner
+        android:id="@+id/filter_spinner"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title" />
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"

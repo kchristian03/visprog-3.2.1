@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listAnimal">
+        <item>ALL</item>
+        <item>Ayam</item>
+        <item>Sapi</item>
+        <item>Kambing</item>
+    </string-array>
+</resources>
